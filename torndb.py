@@ -32,10 +32,10 @@ try:
     import MySQLdb.constants
     import MySQLdb.converters
     import MySQLdb.cursors
-except ImportError:
+except ImportError or ModuleNotFoundError:
     try:
         import pymysql as MySQLdb
-    except ImportError:
+    except ImportError or ModuleNotFoundError:
         # If MySQLdb isn't available this module won't actually be useable,
         # but we want it to at least be importable on readthedocs.org,
         # which has limitations on third-party modules.
